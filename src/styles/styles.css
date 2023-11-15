@@ -319,6 +319,10 @@ body {
     width: 80%;
   }
   
+  .modal-content h3 {
+    margin-top: 35px;
+  }
+
   .modal-content li {
     font-size: 18px;
     font-weight: bold;
@@ -445,6 +449,10 @@ body {
     position: relative;
   }
   
+  .report-modal-content h3 {
+    margin-top: 35px;
+  }
+
   .report-modal-close {
     background-color: red;
     color: #fff;
