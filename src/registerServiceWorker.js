@@ -2,6 +2,8 @@
 
 import { register } from "register-service-worker";
 import { Workbox } from "workbox-window";
+import { registerRoute } from "workbox-routing";
+import { CacheFirst } from "workbox-strategies";
 
 if (process.env.NODE_ENV === "production") {
   register(`${process.env.BASE_URL}service-worker.js`, {
@@ -56,10 +58,10 @@ if (process.env.NODE_ENV === "production") {
     // Register the service worker and manage the cache
     workbox.register();
 
-    // Configurar la estrategia de caché para el index.html
-    workbox.routing.registerRoute(
+    // Configure the cache strategy for the index.html
+    registerRoute(
       ({ request }) => request.destination === "document",
-      new workbox.strategies.CacheFirst()
+      new CacheFirst()
     );
   }
 }
